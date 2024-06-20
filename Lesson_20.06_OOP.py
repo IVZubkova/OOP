@@ -55,18 +55,26 @@ class Kia(Car):
     def __init__(self, model, year, color):
         super().__init__('Kia', model, year, color)
 
+
 class KiaRio(Kia):
     def __init__(self, year=2000, color=(0, 255, 0)):
         super().__init__('Rio', year, color)
+
 
 class Mammal:
     def __init__(self, name, role, viviparous=True):
         self.name = name
         self.role = role
         self.viviparous = viviparous
+
+    def __str__(self):
+        return f'{self.name} {self.role} {self.viviparous}'
+
+
 class Human(Mammal):
     def __init__(self, name):
         super().__init__(name, role='omnivorous')
+
 
 class Dog(Mammal):
     def __init__(self, name, breed, colour):
@@ -78,10 +86,10 @@ class Dog(Mammal):
 
 if __name__ == '__main__':
 
-    doberman = Dog(name='Vasya', breed='dobermann', colour=(205, 0, 0))
-    print(doberman)
-    # ford = Car(brand='Kia', model='Sorrento', year=2005)
-    # print(ford)
+    just_man = Human(name='Vasya')
+    print(just_man)
+    ford = Car(brand='Kia', model='Sorrento', year=2005)
+    print(ford)
     # ford.change_color((255, 0, 0))
     # print(ford)
     # ford.crash(random.choice(['low','middle','high']))
