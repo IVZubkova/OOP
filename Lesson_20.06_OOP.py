@@ -55,15 +55,45 @@ class Kia(Car):
     def __init__(self, model, year, color):
         super().__init__('Kia', model, year, color)
 
+class KiaRio(Kia):
+    def __init__(self, year=2000, color=(0, 255, 0)):
+        super().__init__('Rio', year, color)
+
+class Mammal:
+    def __init__(self, name, role, viviparous=True):
+        self.name = name
+        self.role = role
+        self.viviparous = viviparous
+class Human(Mammal):
+    def __init__(self, name):
+        super().__init__(name, role='omnivorous')
+
+class Dog(Mammal):
+    def __init__(self, name, breed, colour):
+        super().__init__(name, role='predator')
+        self.breed = breed
+        self.colour = colour
+
+
 
 if __name__ == '__main__':
-    ford = Car(brand='Kia', model='Sorrento', year=2005)
-    print(ford)
-    ford.change_color((255, 0, 0))
-    print(ford)
-    ford.crash(random.choice(['low','middle','high']))
-    ford.show_condition()
-    kia = Kia(model='Picanto', year=2010,color=(255, 0, 0))
-    print(kia)
-    kia.crash(random.choice(['low', 'middle', 'high']))
-    kia.show_condition()
+
+    doberman = Dog(name='Vasya', breed='dobermann', colour=(205, 0, 0))
+    print(doberman)
+    # ford = Car(brand='Kia', model='Sorrento', year=2005)
+    # print(ford)
+    # ford.change_color((255, 0, 0))
+    # print(ford)
+    # ford.crash(random.choice(['low','middle','high']))
+    # ford.show_condition()
+    # kia = Kia(model='Picanto', year=2010,color=(251, 0, 0))
+    # print(kia)
+    # kia.crash(random.choice(['low', 'middle', 'high']))
+    # kia.show_condition()
+    # kia_rio = KiaRio()
+    # print(kia_rio)
+    # print(issubclass(KiaRio, Kia))
+    # print(issubclass(KiaRio, Car))#KiaRio является потомком Car?
+    # print('=======')
+    # print(isinstance(kia_rio, KiaRio))#является ли этот объект kia_rio объектом этого класса
+
