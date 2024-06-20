@@ -51,6 +51,11 @@ class Car:
         return f'{self.brand} {self.model} {self.year}, color:{self.color}'
 
 
+class Kia(Car):
+    def __init__(self, model, year, color):
+        super().__init__('Kia', model, year, color)
+
+
 if __name__ == '__main__':
     ford = Car(brand='Kia', model='Sorrento', year=2005)
     print(ford)
@@ -58,3 +63,7 @@ if __name__ == '__main__':
     print(ford)
     ford.crash(random.choice(['low','middle','high']))
     ford.show_condition()
+    kia = Kia(model='Picanto', year=2010,color=(255, 0, 0))
+    print(kia)
+    kia.crash(random.choice(['low', 'middle', 'high']))
+    kia.show_condition()
